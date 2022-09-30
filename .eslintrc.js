@@ -12,7 +12,9 @@ module.exports = {
 
     extends: [
         'plugin:vue/vue3-recommended',
-        'plugin:@typescript-eslint/recommended'
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'plugin:prettier/recommended'
     ],
 
     rules: {
