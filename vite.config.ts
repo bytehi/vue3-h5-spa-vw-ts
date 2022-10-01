@@ -8,11 +8,17 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // 支持自动引入API函数
 import AutoImport from 'unplugin-auto-import/vite'
+/**
+ * 扩展setup插件，支持在script标签中使用name属性
+ * usage: <script setup name="MyComp"></script>
+ */
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    vueSetupExtend(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       dts: 'types/auto-imports.d.ts',

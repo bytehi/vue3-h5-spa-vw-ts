@@ -1,4 +1,4 @@
-<script lang="ts"></script>
+<script setup lang="ts" name="login"></script>
 
 <template>
   <div>index</div>
