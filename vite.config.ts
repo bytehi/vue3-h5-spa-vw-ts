@@ -8,6 +8,20 @@ import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    terserOptions: {
+      compress: {
+        // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
+        keep_infinity: true,
+        // 生产环境去除 console
+        drop_console: true,
+        // 生产环境去除 debugger
+        drop_debugger: true,
+      },
+    },
+    // chunk 大小警告的限制（以 kbs 为单位）
+    chunkSizeWarningLimit: 1500,
+  },
   plugins: [vue(), Components({})],
   resolve: {
     // 查找别名
