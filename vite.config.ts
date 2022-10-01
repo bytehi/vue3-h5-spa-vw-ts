@@ -38,7 +38,11 @@ export default defineConfig({
       },
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: true,
+        }),
+      ],
     }),
   ],
   resolve: {
