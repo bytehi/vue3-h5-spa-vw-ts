@@ -6,11 +6,31 @@ import vue from '@vitejs/plugin-vue'
  */
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+// 支持自动引入API函数
+import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    // https://github.com/antfu/unplugin-auto-import
+    AutoImport({
+      dts: 'types/auto-imports.d.ts',
+      // targets to transform
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+      ],
+      imports: ['vue', 'vue-router', 'pinia'],
+      // 解决eslint报错
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+        globalsPropValue: true,
+      },
+    }),
     Components({
       resolvers: [ElementPlusResolver()],
     }),
