@@ -1,13 +1,8 @@
 <template>
-  <div>index</div>
+    <div>index</div>
 </template>
 
-<script>
-export default {
-
-}
+<script lang="ts">
 </script>
 
-<style>
-
-</style>
+<style scoped></style>

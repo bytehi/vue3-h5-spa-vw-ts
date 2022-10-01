@@ -1,13 +1,8 @@
 <template>
-  <div>home</div>
+    <div>home</div>
 </template>
 
-<script>
-export default {
-
-}
+<script lang="ts">
 </script>
 
-<style>
-
-</style>
+<style scoped></style>
