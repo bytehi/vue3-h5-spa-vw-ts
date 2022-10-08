@@ -25,7 +25,8 @@ export default defineConfig({
     vueSetupExtend(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      dts: 'types/auto-imports.d.ts',
+      // 生成auto-import.d.ts声明文件
+      dts: 'src/auto-imports.d.ts',
       // targets to transform
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
