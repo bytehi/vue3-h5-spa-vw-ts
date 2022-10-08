@@ -39,7 +39,9 @@
     "unplugin-vue-components": "^0.22.7",
     "vite": "^3.1.0",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vue-tsc": "^0.40.4"
+    "vite-plugin-windicss": "^1.8.8",
+    "vue-tsc": "^0.40.4",
+    "windicss": "^3.5.6"
   },
   "config": {
     "commitizen": {
