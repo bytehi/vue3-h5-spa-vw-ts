@@ -5,7 +5,6 @@ import vue from '@vitejs/plugin-vue'
  * usage: 直接使用组件,无需在任何地方导入组件
  */
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // 支持自动引入API函数
 import AutoImport from 'unplugin-auto-import/vite'
 /**
@@ -43,11 +42,7 @@ export default defineConfig({
       },
     }),
     Components({
-      resolvers: [
-        ElementPlusResolver({
-          importStyle: true,
-        }),
-      ],
+      resolvers: [],
     }),
     Unocss({
       presets: [
