@@ -2,15 +2,15 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 /**
  * 组件库按需引入插件
- * usage: 直接使用组件,无需在任何地方导入组件
+ * 说明: 直接使用组件,无需在任何地方导入组件
  */
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { VantResolver } from 'unplugin-vue-components/resolvers'
 // 支持自动引入API函数
 import AutoImport from 'unplugin-auto-import/vite'
 /**
  * 扩展setup插件，支持在script标签中使用name属性
- * usage: <script setup name="MyComp"></script>
+ * 说明: <script setup name="MyComp"></script>
  */
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
@@ -43,11 +43,7 @@ export default defineConfig({
       },
     }),
     Components({
-      resolvers: [
-        ElementPlusResolver({
-          importStyle: true,
-        }),
-      ],
+      resolvers: [VantResolver()],
     }),
     Unocss({
       presets: [

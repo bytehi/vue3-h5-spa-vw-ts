@@ -8,13 +8,11 @@ const router = createRouter({
 
 // https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#全局解析守卫
 router.beforeEach(() => {
-  // NProgress.start()
+  // do something
 })
 
 router.afterEach(() => {
-  // NProgress.done()
-  // 更改页面标题
-  // document.title = to.meta.title || ''
+  // do something
 })
 
 export default router
