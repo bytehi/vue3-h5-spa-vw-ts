@@ -1,3 +1,4 @@
+import * as path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 /**
@@ -19,6 +20,7 @@ import { presetIcons, presetUno, presetAttributify } from 'unocss'
 import WindiCSS from 'vite-plugin-windicss'
 
 import postcssImport from 'postcss-pxtorem'
+import { viteVConsole } from 'vite-plugin-vconsole'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -81,6 +83,14 @@ export default defineConfig({
       ],
     }),
     WindiCSS(),
+    viteVConsole({
+      entry: path.resolve('src/main.ts'), // or you can use entry: [path.resolve('src/main.ts')]
+      localEnabled: true,
+      enabled: true,
+      config: {
+        maxLogNumber: 1000,
+      },
+    }),
   ],
   css: {
     postcss: {

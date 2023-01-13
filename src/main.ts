@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import router from './router'
 import store from './store'
 import App from './App.vue'
-import VConsole from 'vconsole'
 
 // 引入css引擎
 // import 'uno.css'
@@ -22,9 +21,5 @@ import 'virtual:windi-devtools'
 // import 'vant/es/image-preview/style';
 
 import './styles/index.scss'
-
-if (import.meta.env.MODE === 'development') {
-  new VConsole()
-}
 
 createApp(App).use(router).use(store).mount('#app')
