@@ -8,6 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
   '@vitejs/plugin-vue': ^4.0.0
+  amfe-flexible: ^2.2.1
   commitizen: ^4.2.6
   commitlint-config-cz: ^0.13.3
   cz-conventional-changelog: ^3.3.0
@@ -20,6 +21,8 @@ specifiers:
   husky: ^8.0.3
   lint-staged: ^13.1.0
   pinia: ^2.0.28
+  postcss: ^8.4.21
+  postcss-pxtorem: ^6.0.0
   prettier: ^2.8.2
   sass: ^1.57.1
   typescript: ^4.9.4
@@ -36,6 +39,7 @@ specifiers:
   windicss: ^3.5.6
 
 dependencies:
+  amfe-flexible: 2.2.1
   dayjs: 1.11.7
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
   vant: 4.0.7_vue@3.2.45
@@ -60,6 +64,8 @@ devDependencies:
   eslint-plugin-vue: 9.8.0_eslint@8.31.0
   husky: 8.0.3
   lint-staged: 13.1.0
+  postcss: 8.4.21
+  postcss-pxtorem: 6.0.0_postcss@8.4.21
   prettier: 2.8.2
   sass: 1.57.1
   typescript: 4.9.4
@@ -1185,6 +1191,10 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
+
+  /amfe-flexible/2.2.1:
+    resolution: {integrity: sha512-L2VfvDzoETBjhRptg5u/IUuzHSuxm22JpSRb404p/TBGeRfwWmmNEbB+TFPIP/sS/+pbM18bCFH9QnMojLuPNw==}
+    dev: false
 
   /ansi-escapes/3.2.0:
     resolution: {integrity: sha512-cBhpre4ma+U0T1oM5fXg7Dy1Jw7zzwv7lt/GoCpr+hDQJoYnKVPLL4dCvSEFMmQurOQvSrwT7SL/DAlhBI97RQ==}
@@ -3220,6 +3230,14 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.1.0
       pathe: 1.0.0
+    dev: true
+
+  /postcss-pxtorem/6.0.0_postcss@8.4.21:
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.21
     dev: true
 
   /postcss-selector-parser/6.0.11:

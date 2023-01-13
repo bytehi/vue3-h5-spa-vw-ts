@@ -18,6 +18,8 @@ import Unocss from 'unocss/vite'
 import { presetIcons, presetUno, presetAttributify } from 'unocss'
 import WindiCSS from 'vite-plugin-windicss'
 
+import postcssImport from 'postcss-pxtorem'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -80,6 +82,18 @@ export default defineConfig({
     }),
     WindiCSS(),
   ],
+  css: {
+    postcss: {
+      plugins: [
+        postcssImport({
+          rootValue({ file }) {
+            return file.indexOf('node_modules/vant') !== -1 ? 37.5 : 75
+          },
+          propList: ['*'],
+        }),
+      ],
+    },
+  },
   resolve: {
     // 查找别名
     alias: [{ find: '@', replacement: '/src' }],

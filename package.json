@@ -1,5 +1,5 @@
 {
-  "name": "vue3-h5-spa-ts",
+  "name": "vue3-h5-spa-rem-ts",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -11,6 +11,7 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "dayjs": "^1.11.7",
     "pinia": "^2.0.28",
     "vant": "^4.0.7",
@@ -35,6 +36,8 @@
     "eslint-plugin-vue": "^9.8.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "postcss": "^8.4.21",
+    "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.2",
     "sass": "^1.57.1",
     "typescript": "^4.9.4",
@@ -57,5 +60,8 @@
       "npm run eslint",
       "npm run prettier"
     ]
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
