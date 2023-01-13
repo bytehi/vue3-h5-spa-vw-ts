@@ -15,8 +15,6 @@ import AutoImport from 'unplugin-auto-import/vite'
  */
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
-import Unocss from 'unocss/vite'
-import { presetIcons, presetUno, presetAttributify } from 'unocss'
 import WindiCSS from 'vite-plugin-windicss'
 
 import postcssImport from 'postcss-pxtorem'
@@ -48,39 +46,6 @@ export default defineConfig({
     }),
     Components({
       resolvers: [VantResolver()],
-    }),
-    Unocss({
-      presets: [
-        presetIcons({
-          scale: 1.2,
-          warn: true,
-        }),
-        presetUno(),
-        presetAttributify(),
-      ],
-      theme: {
-        colors: {
-          primary: 'var(--adm-color-primary)',
-          text: 'var(--adm-color-text)',
-          sed: 'var(--adm-color-text-secondary)',
-          light: 'var(--adm-color-light)',
-        },
-      },
-      // 以下配置是为了可以直接使用标签 <i-ep-edit />
-      variants: [
-        {
-          match: (s) => {
-            if (s.startsWith('i-')) {
-              return {
-                matcher: s,
-                selector: (s) => {
-                  return s.startsWith('.') ? `${s.slice(1)},${s}` : s
-                },
-              }
-            }
-          },
-        },
-      ],
     }),
     WindiCSS(),
     viteVConsole({
