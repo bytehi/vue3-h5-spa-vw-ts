@@ -1,4 +1,4 @@
-import * as path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 /**
@@ -49,7 +49,7 @@ export default defineConfig({
     }),
     WindiCSS(),
     viteVConsole({
-      entry: path.resolve('src/main.ts'), // or you can use entry: [path.resolve('src/main.ts')]
+      entry: resolve(__dirname, 'src/main.ts'), // or you can use entry: [path.resolve('src/main.ts')]
       localEnabled: true,
       enabled: true,
       config: {
